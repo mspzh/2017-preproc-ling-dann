@@ -28,8 +28,8 @@ for j in sent:
             else:
                 k = k.strip()
                 counter_wordiness += 1
-                tokenis.write(str(counter_wordiness) + u'   ' + k + u'  _'*8 + u'\n')
-                print(str(counter_wordiness) + u'   ' + k + u'  _'*8 + u'\n')
+                tokenis.write(str(counter_wordiness) + u'\t' + k + u'\t_'*8 + u'\n')
+                print(str(counter_wordiness) + u'\t' + k + u'\t_'*8 + u'\n')
                 if '[?!.]' in k:
                     continue
         counter_wordiness = 0
