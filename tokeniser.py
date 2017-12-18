@@ -15,16 +15,21 @@ sent = igbo_text.split(u'ə')
 
 for j in sent:
     j = j.strip()
-    if j is not '':
+    if j is '':
+        continue
+    else:
         counter += 1
         tokenis.write(u'#sent_id = ' + str(counter) + u'\n#text = ' + j + u'\n')
         j = re.sub('([\(\)"?!.])', ' \\1', j)
         sent_words = j.split(' ')
         for k in sent_words:
-            if k is not '':
+            if k is '':
+                continue
+            else:
                 k = k.strip()
                 counter_wordiness += 1
-                tokenis.write(str(counter_wordiness) + u';' + k + u';_;'*8 + u'\n')
+                tokenis.write(str(counter_wordiness) + u'   ' + k + u'  _'*8 + u'\n')
+                print(str(counter_wordiness) + u'   ' + k + u'  _'*8 + u'\n')
                 if '[?!.]' in k:
                     continue
         counter_wordiness = 0
