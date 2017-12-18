@@ -18,6 +18,7 @@ for j in text:
     if j is not '':
         j = j.strip()
         counter_lines += 1
+        print(j)
 
 for j in igbo_text:
     if j in '[qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789]':
