@@ -17,7 +17,7 @@ def sentences_processing(sentence, counter):
         sent_to_write = '#sent_id = ' + str(counter+1) + '\n#text = ' + sentence + '\n'
         for word in sentence.split(" "):
             new_word = word.strip(PUNCT_ARR)
-            if word[0] in PUNCT_ARR: #I presume there punct sign can't arise somewhere else than in the end of the word (but for quotes and brackets) and that there is only one there
+            if word[0] in PUNCT_ARR:
                 j+=1
                 words_to_write.append(str(j) + '\t' + word[0] + '\t_'*8 + '\n')
             j+=1
