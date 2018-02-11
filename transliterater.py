@@ -2,6 +2,7 @@
 #!/usr/bin/env python
 
 from transl import transl
+import sys
 
 PUNCT_ARR = '".!?:,()'
 
@@ -15,8 +16,8 @@ def translate_word(word):
 	return transliterated_word
 
 if __name__ == '__main__':
-	inf = open('tokenized_DK.txt')
-	with open('transliterated.txt', 'w') as outfile:
+	inf = open(sys.stdin)
+	with open(sys.stdout) as outfile:
 		for line in inf:
 			if line[0] == "#":
 				outfile.write(line)
@@ -26,4 +27,5 @@ if __name__ == '__main__':
 				appendix = "Transl=" + trans_word + "\n"
 				line += appendix
 				outfile.write(line)
+				outfile.write('\n')
 	inf.close()
