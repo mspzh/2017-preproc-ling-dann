@@ -23,7 +23,7 @@ if __name__ == '__main__':
 			else:
 				trans_word = translate_word(line.split("\t")[1])
 				line = line.replace("\n", " ")
-				appendix = "Transl = " + trans_word + "\n"
+				appendix = "Transl=" + trans_word + "\n"
 				line += appendix
 				outfile.write(line)
 	inf.close()
