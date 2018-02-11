@@ -33,8 +33,9 @@ if __name__ == '__main__':
     with open("wiki.txt") as infile:
         text = infile.read()
         igbo_text = inf_to_sentences(text)
-        with open('tokenized_DK.txt', 'w') as outfile:
+        with open('tokenized.txt', 'w') as outfile:
             for i, sentence in enumerate(igbo_text):
                 sent, words = sentences_processing(sentence, i)
                 outfile.write(sent)
                 outfile.write(''.join(words))
+                outfile.write('\n')
