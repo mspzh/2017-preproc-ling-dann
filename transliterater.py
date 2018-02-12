@@ -16,8 +16,8 @@ def translate_word(word):
 	return transliterated_word
 
 if __name__ == '__main__':
-	inf = open(sys.stdin)
-	with open(sys.stdout) as outfile:
+	inf = sys.stdin
+	with sys.stdout as outfile:
 		for line in inf:
 			if line[0] == "#":
 				outfile.write(line)
