@@ -30,10 +30,10 @@ def sentences_processing(sentence, counter):
     return sent_to_write, words_to_write
 
 if __name__ == '__main__':
-    with open(sys.stdin) as infile:
+    with sys.stdin as infile:
         text = infile.read()
         igbo_text = inf_to_sentences(text)
-        with open(sys.stdout) as outfile:
+        with sys.stdout as outfile:
             for i, sentence in enumerate(igbo_text):
                 sent, words = sentences_processing(sentence, i)
                 outfile.write(sent)
