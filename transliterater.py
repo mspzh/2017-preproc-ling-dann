@@ -19,13 +19,14 @@ if __name__ == '__main__':
 	inf = sys.stdin
 	with sys.stdout as outfile:
 		for line in inf:
-			if line[0] == "#":
-				outfile.write(line)
-			else:
-				trans_word = translate_word(line.split("\t")[1])
-				line = line.replace("\n", "")
-				appendix = "Transl=" + trans_word + "\n"
-				line += appendix
-				outfile.write(line)
-				outfile.write('\n')
+			if line != '\n':
+				if line[0] == "#":
+					outfile.write(line)
+				else:
+					trans_word = translate_word(line.split("\t")[1])
+					line = line.replace("\n", "")
+					appendix = "Transl=" + trans_word + "\n"
+					line += appendix
+					outfile.write(line)
+					outfile.write('\n')
 	inf.close()
